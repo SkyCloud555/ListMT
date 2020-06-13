@@ -1,14 +1,23 @@
 #pragma once
 
-//Хищенко Андрей Олегович, 2019 г
-//Данный заголовочный файл предоставляет набор классов стратегий для блокировки потоков в многопоточной среде. О классах стратегий можно прочитать в первой главе книги
-//«Александреску А. – Современное проектирование на С++».
-//Каждый класс этой стратегии должен предоставлять в обязательном порядке четыре функции: LockExclusive, LockShared, UnlockExclusive и UnlockShared для блокировки потоков.
-//При этом, если средство блокировки не предоставляет "тонкую блокировку", разделяющую монопольный доступ к ресурсу и доступ на чтение, то пары функций Exclusive/Shared
-//могут функционально совпадать.
+//Copyright (C) 2020 Andrey Khishchenko
 
-//Впоследствии я решил добавить в интерфейс стратегии ещё две функции: Lock и Unlock. Они полностью эквивалентны LockExclusive и UnlockExclusive и введены просто для удобства
-//в тех классах, где не используется какая-либо "тонкая" блокировка.
+//This file is part of ListMT library.
+//
+//ListMT is free library software : you can redistribute it and /or modify
+//it under the terms of the GNU Lesser General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//any later version.
+//
+//ListMT library is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+//GNU Lesser General Public License for more details.
+//
+//You should have received a copy of the GNU Lesser General Public License
+//along with ListMT library. If not, see < https://www.gnu.org/licenses/>.
+
+//Thread locking policies header.
 
 //ВКЛЮЧАЕМЫЕ ФАЙЛЫ/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifdef _MSC_VER							//операционная система Windows

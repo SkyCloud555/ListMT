@@ -1,15 +1,23 @@
 #pragma once
 
-//Хищенко Андрей Олегович, 2019 г
-//Заголовочный файл для классов стратегий управления памятью и работы с указателями. О классах стратегий можно прочитать в первой главе книги
-//«Александреску А. – Современное проектирование на С++».
+//Copyright (C) 2020 Andrey Khishchenko
 
-//Данная стратегия имеет ограничения и применима только к работы с единичными (!!!) объектами, не массивами.
-//Каждый класс стратегии предоставляет тип ptrType, задающий тип указателя, а также статические функции Create и Delete для создания и удаления объекта
-//заданного типа.
+//This file is part of ListMT library.
+//
+//ListMT is free library software : you can redistribute it and /or modify
+//it under the terms of the GNU Lesser General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//any later version.
+//
+//ListMT library is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+//GNU Lesser General Public License for more details.
+//
+//You should have received a copy of the GNU Lesser General Public License
+//along with ListMT library. If not, see < https://www.gnu.org/licenses/>.
 
-//Аналогично, удалитель Deleter - это класс, предоставляющий статическую функцию Delete.
-//Выделитель Allocator - это класс, предоставляющий статическую функцию Create.
+//Memory policies header.
 
 //ВКЛЮЧАЕМЫЕ ФАЙЛЫ/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <memory>				//интеллектуальные указатели
